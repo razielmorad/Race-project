@@ -1,0 +1,37 @@
+button {
+border-radius: 30px;
+padding: 10px;
+background-color: rgb(216, 138, 86);
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.race-container {
+  position: relative;
+}
+
+.race-container > #dog-box {
+  position: absolute;
+  top: 20px;
+  left: 500px;
+  cursor: pointer;
+}
+
+.race-container > #horse-box {
+  position: absolute;
+  top: 155px;
+  left: 300px;
+  cursor: pointer;
+}
+
+.race-container > #duck-box {
+  position: absolute;
+  top: 288px;
+  left: 100px;
+  cursor: pointer;
+}
+
+.race-container > #chick-box {
+  position: absolute;
+  top: 430px;
+  left: 380px;
+  cursor: pointer;
+}
