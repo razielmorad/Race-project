@@ -1,8 +1,9 @@
 button {
-border-radius: 30px;
-padding: 10px;
-background-color: rgb(216, 138, 86);
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  border-radius: 30px;
+  padding: 10px;
+  background-color: rgb(216, 138, 86);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .race-container {
   position: relative;
@@ -34,4 +35,15 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
   top: 430px;
   left: 380px;
   cursor: pointer;
+}
+body {
+  background: url(media/race-track2.jpg);
+  background-size: 250px;
+  background-repeat: repeat;
+}
+@media only screen and (max-width: 600px) {
+  body {
+background-size: 300px;
+
+  }
 }

@@ -47,11 +47,11 @@ const runners = [
 let x;
 
 resetBtn.addEventListener("click", function () {
-  setToStart();
   clearTimeout(mySetTimeout);
   clearTimeout(mySetTimeout2);
   clearTimeout(mySetTimeout3);
   clearTimeout(mySetTimeout4);
+  setToStart();
   clearBorder();
 });
 
@@ -62,18 +62,21 @@ randomBtn.addEventListener("click", function () {
   myInterval = setInterval(function () {
     // console.log(window.innerWidth);
     for (let runner of runners)
-      if (parseInt(runner.position) >= window.innerWidth - 150) {
+      if (parseInt(runner.position) >= window.innerWidth - 100) {
         clearInterval(myInterval);
         clearTimeout(mySetTimeout);
         clearTimeout(mySetTimeout2);
         clearTimeout(mySetTimeout3);
         clearTimeout(mySetTimeout4);
         x = null;
-        alert(`${runner.name} wins !!!!`);
+        if (runner.id.style.border) {
+          alert(`congratulations you won!!!!!`)
+        } else {
+          alert(`${runner.name} wins 😓`);
+        }
       }
     chooseRandomPlayer();
-    //  console.log(parseInt(window.innerWidth - 254));
-  }, 500);
+  }, 350);
 });
 
 function renderPosition() {
@@ -126,43 +129,43 @@ let mySetTimeout4;
 function theChosenPlayer(randomPlayer) {
   switch (runners[randomPlayer].name) {
     case `dog`:
-      mySetTimeout = setTimeout(function () {
-        moveLeft(0);
-        addSound(0);
-      }, 1000);
+      let dogChance = Math.random();
+      if (dogChance > 0.5) {
+        mySetTimeout = setTimeout(function () {
+          moveLeft(0);
+          addSound(0);
+        }, 350);
+      } else console.log("dog was excluded");
 
       console.log("dog");
       break;
     case `horse`:
-      mySetTimeout2 = setTimeout(function () {
-        moveLeft(1);
-        addSound(1);
-      }, 1000);
-      console.log("horse");
+      let horseChance = Math.random();
+      if (horseChance > 0.7) {
+        mySetTimeout2 = setTimeout(function () {
+          moveLeft(1);
+          addSound(1);
+        }, 350);
+      } else console.log("horse was excluded");
       break;
+
     case `duck`:
-      mySetTimeout3 = setTimeout(
-        function () {
-          moveLeft(2);
+      let duckChance = Math.random();
+      if (duckChance > 0.6) {
+        mySetTimeout3 = setTimeout(function () {
           moveLeft(2);
           addSound(2);
-        },
-
-        1000
-      );
-      console.log("duck");
+        }, 350);
+      } else console.log("duck was excluded");
       break;
     case `chick`:
-      mySetTimeout4 = setTimeout(
-        function () {
-          moveLeft(3);
+      let chickChance = Math.random();
+      if (chickChance > 0.3) {
+        mySetTimeout4 = setTimeout(function () {
           moveLeft(3);
           addSound(3);
-        },
-
-        1000
-      );
-      console.log("chick");
+        }, 350);
+      } else console.log("chick was excluded");
       break;
   }
 }
