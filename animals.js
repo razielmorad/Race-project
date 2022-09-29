@@ -72,7 +72,7 @@ randomBtn.addEventListener("click", function () {
         if (runner.id.style.border) {
           alert(`congratulations you won!!!!!`)
         } else {
-          alert(`${runner.name} wins 😓`);
+          alert(`${runner.name} wins 😓 that means you lost :(`);
         }
       }
     chooseRandomPlayer();
@@ -103,6 +103,8 @@ function setBorder() {
   let randomPlayer = getRandomInt(runners.length);
   console.log(randomPlayer);
   runners[randomPlayer].id.style.border = "3px solid black";
+  
+  console.log(runners[randomPlayer].id.style.background);
 }
 function chooseRandomPlayer() {
   if (x) {
